@@ -6,10 +6,10 @@ import { publish, tap } from 'rxjs/operators';
 // EXMPL - 1 - begin
 //emit value every 1 second
 // Example 1: Connect observable after subscribers
-const srcInterval = interval(1000); //do nothing until connect() is called
+// const srcInterval = interval(1000); //do nothing until connect() is called
 
 const exmpl_1 = publish()(
-  srcInterval.pipe(
+  interval(1000).pipe(
     //side effects will be executed once
     tap((_) => console.log('Do Something!'))
   )
